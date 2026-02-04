@@ -183,6 +183,17 @@ Special Request: ${message || "None"}`;
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
 });
 
+const floatingButtons = document.querySelectorAll('.icon-btn');
+
+floatingButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault(); // prevent jump on mobile
+        // Remove active from other buttons
+        floatingButtons.forEach(b => { if(b !== btn) b.classList.remove('active'); });
+        // Toggle active on this button
+        btn.classList.toggle('active');
+    });
+});
 
 
 

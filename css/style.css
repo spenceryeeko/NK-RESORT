@@ -444,6 +444,66 @@
     max-width: 100%;
 }
 
+/* Common for both */
+.icon-btn {
+    position: fixed;
+    right: 0;               /* stick to the right side */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 50px 0 0 50px;
+    width: 50px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: width 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+}
+
+/* Spacing buttons vertically */
+.icon-btn.whatsapp {
+    top: 200px;
+    background-color: #25D366;
+}
+
+.icon-btn.call {
+    top: 270px;
+    background-color: #007bff;
+}
+
+.icon-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-btn .btn-text {
+    margin-left: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover for desktop */
+.icon-btn:hover {
+    width: 160px;
+}
+
+.icon-btn:hover .btn-text {
+    opacity: 1;
+}
+
+/* Active class for mobile tap */
+.icon-btn.active {
+    width: 160px;
+}
+
+.icon-btn.active .btn-text {
+    opacity: 1;
+}
+
 
 
 @media (max-width: 768px) {
