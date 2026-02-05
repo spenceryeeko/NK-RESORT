@@ -662,6 +662,31 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+document.querySelectorAll('.icon-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        // Only apply this behavior on small screens
+        if (window.innerWidth <= 768) {
+
+            // If button is NOT active → first tap (expand only)
+            if (!this.classList.contains('active')) {
+                e.preventDefault(); // stop navigation
+
+                // Close other buttons
+                document.querySelectorAll('.icon-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+
+                // Open this one
+                this.classList.add('active');
+            }
+            // If already active → second tap → allow navigation
+        }
+    });
+});
+</script>
+
 </body>
 
 </html>
